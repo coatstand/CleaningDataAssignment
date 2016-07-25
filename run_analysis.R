@@ -1,5 +1,15 @@
+###############################################################################
+# Script to process data as per the instructions of the Getting and Cleaning
+# Data Coursera assignment.
+###############################################################################
+# The numbers in the comments refer to the steps in the assignment instructions.
+# Note that instructions steps 3 and 4 are carried out in reverse order to
+# help with readability. This does not affect the final outcome.
+###############################################################################
+
 library(dplyr)
 
+###
 # 1. Merge the training and test data sets to create one data set
 
 # a. Read in the datasets
@@ -10,39 +20,40 @@ xtrain <- read.table("UCI_HAR_Dataset/train/X_train.txt")
 ytrain <- read.table("UCI_HAR_Dataset/train/y_train.txt")
 subjecttrain <- read.table("UCI_HAR_Dataset/train/subject_train.txt")
 
-# b. Combine the datasets into one dataset called alldata
+# b. And the list of variable names which we will need later
+variables <- read.table("UCI_HAR_Dataset/features.txt")
+
+# c. Combine the datasets into one dataset called alldata
 testdata <- cbind(xtest, subjecttest, ytest)
 traindata <- cbind(xtrain, subjecttrain, ytrain)
 alldata <- rbind(testdata, traindata)
 
+###
 # 2. Extract only mean and standard deviation (std) measurements
 
 # a. Work out which variable IDs are for mean or std measurements
 meanstd <- grep("[Mm]ean|std", variables[, 2])
-# b. Extract the approprate columns from alldata
+# b. Extract the approprate columns from alldata (alldata contains 563
+# variables so the subject and activity data is in columns 562 and 563)
 alldata <- alldata[, c(meanstd, 562:563)]
 
+###
 # 4. Appropriately label the data set with descriptive variable names
-#   Note - this step is done prior to step 3 as listed in the assignment in
-#   order to use the variable names in step 3 for readability
+#  Note - this step is done prior to step 3 as listed in the assignment in
+#  order to use the variable names in step 3 for readability
 
 # a. Extract the appropriate variable names from features.txt
-variables <- read.table("UCI_HAR_Dataset/features.txt")
 columnnames <- as.character(variables[meanstd, 2])
 
-# b. Remove any empty parentheses from the variable names
+# b. Remove the parentheses, commas and hyphens from the variable names so that
+# we are left with clean, alphanumeric variable names
 columnnames <- gsub("\\(|\\)|,|-", "", columnnames)
-# c. Remove any remaining closing parentheses
-#columnnames <- gsub("\\)", "", columnnames)
-# d. Substituate opening parentheses and commas for hyphens so that hyphen is
-# the only non-alphanumeric used in variable names
-#columnnames <- gsub("\\(|,", "-", columnnames)
-
 
 # c. Label the dataset with these variable names and include names for the
 # subject ID and activity variables
 names(alldata) <- c(columnnames, "subjectID", "activity")
 
+###
 # 3. Apply descriptive activity names
 
 # a. Extract a dataset for each activity and apply the descriptive name
@@ -62,6 +73,7 @@ laying <- filter(alldata, activity == 6) %>%
 # b. Combine the activity datasets back into a single dataset
 alldata <- rbind(walking, walkingup, walkingdown, sitting, standing, laying)
 
+###
 # 5. Create a 2nd tidy data set with the average of each variable for each
 # activity and each subject
 
@@ -159,3 +171,7 @@ finaldata <- summarise(groupeddata,
 
 # c. Write the final data set to the file finaldata.txt
 write.table(finaldata, file = "finaldata.txt", row.names = FALSE)
+
+#####
+# END
+#####
