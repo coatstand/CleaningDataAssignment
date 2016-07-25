@@ -28,12 +28,12 @@ The data is tidy as:
 * For this project, we were only interested in the measurements that were a mean or standard deviation so all variable names that contained any of "Mean", "mean" or "std" were extracted.
 * The resulting columns were then named using the variable names provided in the original dataset where appropriate. However, these variable names were cleaned up by removing the non-alphanumeric characters.
 * For the activity variable to be more easily understood, the activity IDs were replaced by activity descriptions as follows:
-..* 1 = walking
-..* 2 = walkingUp
-..* 3 = walkingDown
-..* 4 = sitting
-..* 5 = standing
-..* 6 = laying
+ * 1 = walking
+  * 2 = walkingUp
+ * 3 = walkingDown
+ * 4 = sitting
+ * 5 = standing
+ * 6 = laying
 * In order to create the final tidy data set, the resulting data was grouped by activity and subject then the mean of each variable calculated for each activity and subject grouping
 * Finally, the resulting data set is output to the file "finaldata.txt"
 

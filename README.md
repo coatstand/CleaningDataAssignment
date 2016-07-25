@@ -9,6 +9,7 @@ This repo contains my submission for the Cousera "Getting and Cleaning Data" cou
 
 ## Creating the tidy data file
 To create the data file:
+
 1. Download and extract the data https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip [1]
 2. Rename the "UCI HAR Dataset" directory to "UCI_HAR_Dataset"
 3. Download the run_analysis.R file from this repository and save in the same directory as the "UCI_HAR_Dataset" directory
