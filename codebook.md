@@ -29,7 +29,7 @@ The data is tidy as:
 * The resulting columns were then named using the variable names provided in the original dataset where appropriate. However, these variable names were cleaned up by removing the non-alphanumeric characters.
 * For the activity variable to be more easily understood, the activity IDs were replaced by activity descriptions as follows:
  * 1 = walking
-  * 2 = walkingUp
+ * 2 = walkingUp
  * 3 = walkingDown
  * 4 = sitting
  * 5 = standing
@@ -42,12 +42,12 @@ The data is tidy as:
 *activity*
 * Describes the activity that the subject was performing. 
 * The 6 activies were:
-..* walking
-..* walkingUp (walking upstairs)
-..* walkingDown (walking downstairs)
-..* sitting
-..* standing
-..* laying
+ * walking
+ * walkingUp (walking upstairs)
+ * walkingDown (walking downstairs)
+ * sitting
+ * standing
+ * laying
     
 *subjectID*
 * The unique ID of the experiment volunteer.
@@ -72,7 +72,7 @@ The names of the following varibles are taken from the original dataset and use 
 In the original data set, there were a number of observations recorded for each subject while performing each activity. In the original dataset, the values had been normalised and bounded within [-1,1].  The following variables available in this data set record the average value for each unique subject and activity combination.
 
 *tBodyAccmeanX
-\ntBodyAccmeanY
+\n tBodyAccmeanY
 tBodyAccmeanZ
 tBodyAccstdX
 tBodyAccstdY
