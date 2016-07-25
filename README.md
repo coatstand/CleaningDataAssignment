@@ -8,6 +8,7 @@ This repo contains my submission for the Cousera "Getting and Cleaning Data" cou
 * run_analysis.R: The script that performs the data processing described in codebook.md and creates the resulting data file.
 
 ## Creating the tidy data file
+To create the data file:
 1. Download and extract the data https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip [1]
 2. Rename the "UCI HAR Dataset" directory to "UCI_HAR_Dataset"
 3. Download the run_analysis.R file from this repository and save in the same directory as the "UCI_HAR_Dataset" directory
@@ -16,6 +17,7 @@ This repo contains my submission for the Cousera "Getting and Cleaning Data" cou
 
 ## Reading in the data file
 If the data file is stored in your working directory, it can be read in to R using the code:
+
 `data <- read.table("finaldata.txt", header = TRUE)`
 
 ## References
