@@ -39,7 +39,7 @@ The data is tidy as:
 
 ## Variables
 
-**activity**
+activity
 * Describes the activity that the subject was performing. 
 * The 6 activies were:
  * walking
@@ -49,7 +49,7 @@ The data is tidy as:
  * standing
  * laying
     
-**subjectID**
+subjectID
 * The unique ID of the experiment volunteer.
 * There were 30 volunteers and the subjectIDs take the values 1 - 30.
     
@@ -71,7 +71,7 @@ The names of the following varibles are taken from the original dataset and use 
 #### Values
 In the original data set, there were a number of observations recorded for each subject while performing each activity. In the original dataset, the values had been normalised and bounded within [-1,1].  The following variables available in this data set record the average value for each unique subject and activity combination.
 
-**tBodyAccmeanX
+tBodyAccmeanX
 
 tBodyAccmeanY
 
@@ -241,7 +241,7 @@ angleXgravityMean
 
 angleYgravityMean
 
-angleZgravityMean**
+angleZgravityMean
 
 ## References
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
